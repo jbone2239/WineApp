@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine Quality Prediction</title>
+</head>
+<body>
+    <h1>Wine Quality Prediction</h1>
+    <form method="POST" action="/predict">
+        <label>Fixed Acidity:</label> <input type="number" step="any" name="fixed_acidity" required><br>
+        <label>Volatile Acidity:</label> <input type="number" step="any" name="volatile_acidity" required><br>
+        <label>Citric Acid:</label> <input type="number" step="any" name="citric_acid" required><br>
+        <label>Residual Sugar:</label> <input type="number" step="any" name="residual_sugar" required><br>
+        <label>Chlorides:</label> <input type="number" step="any" name="chlorides" required><br>
+        <label>Free Sulfur Dioxide:</label> <input type="number" step="any" name="free_sulfur_dioxide" required><br>
+        <label>Total Sulfur Dioxide:</label> <input type="number" step="any" name="total_sulfur_dioxide" required><br>
+        <label>Density:</label> <input type="number" step="any" name="density" required><br>
+        <label>pH:</label> <input type="number" step="any" name="pH" required><br>
+        <label>Sulphates:</label> <input type="number" step="any" name="sulphates" required><br>
+        <label>Alcohol:</label> <input type="number" step="any" name="alcohol" required><br>
+        <label>Wine Type:</label>
+        <select name="wine_type" required>
+            <option value="red">Red</option>
+            <option value="white">White</option>
+        </select><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+    <p>{{ prediction_text }}</p>
+    {% endif %}
+</body>
+</html>
